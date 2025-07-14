@@ -292,8 +292,8 @@ export default function PetDashboard() {
       </div>
     </div>
   );
-
-  const renderDashboard = () => (
+const RenderDashboard = () => {
+  return (
     <div
       className={`space-y-6 md:space-y-8 transition-all duration-500 ${
         isLoading ? "opacity-0" : "opacity-100 animate-in slide-in-from-bottom-4"
@@ -347,6 +347,8 @@ export default function PetDashboard() {
       )}
     </div>
   );
+};
+
 
   const renderBoxes = () => (
     <div className="space-y-6 animate-in fade-in-50 duration-500">
@@ -647,7 +649,7 @@ export default function PetDashboard() {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return renderDashboard();
+        return RenderDashboard();
       case "boxes":
         return renderBoxes();
       case "profile":
@@ -657,7 +659,7 @@ export default function PetDashboard() {
       case "account":
         return renderAccount();
       default:
-        return renderDashboard();
+        return RenderDashboard();
     }
   };
 
