@@ -1,4 +1,5 @@
-\"use client";
+"use client";
+
 import SlidingSubscriptionCards from "@/components/SlidingSubscriptionCards";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -646,22 +647,23 @@ const RenderDashboard = () => {
     </div>
   );
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case "dashboard":
-        return RenderDashboard();
-      case "boxes":
-        return renderBoxes();
-      case "profile":
-        return renderProfile();
-      case "chat":
-        return renderChat();
-      case "account":
-        return renderAccount();
-      default:
-        return RenderDashboard();
-    }
-  };
+const renderContent = () => {
+  switch (activeTab) {
+    case "dashboard":
+      return <RenderDashboard />;
+    case "boxes":
+      return renderBoxes();
+    case "profile":
+      return renderProfile();
+    case "chat":
+      return renderChat();
+    case "account":
+      return renderAccount();
+    default:
+      return <RenderDashboard />;
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
